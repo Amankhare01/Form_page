@@ -1,0 +1,12 @@
+.bg1{
+  border-radius: 5%;
+  background: rgb(74,74,74);
+  background: linear-gradient(90deg, rgb(34, 101, 113) 0%, rgba(74,74,74,1) 100%);}
+
+.r1{
+  text-shadow: 1px 1px 1px white;
+  }
+
+body{
+  background-color: #391111;
+}
