@@ -10,3 +10,7 @@
 body{
   background-color: #391111;
 }
+.qual1{
+  display: flex;
+  justify-content: space-between;
+}
