@@ -4,6 +4,7 @@
     <div class="form-page">
       <input
         type="text"
+        id="name"
         name="name"
         class="form-control"
         placeholder="Full Name*"
@@ -14,6 +15,7 @@
     <div class="form-page">
       <input
         type="tel"
+        id="phone"
         name="phone"
         class="form-control"
         placeholder="Phone*"
@@ -24,6 +26,7 @@
     <div class="form-page">
       <input
         type="email"
+        id="email"
         name="email"
         class="form-control"
         placeholder="Email*"
@@ -39,19 +42,20 @@
           class="form-control"
           required
         >
-          <option value=""> - Select Qualification-</option>
+          <option value=""> - Select Qualification -</option>
           <option value="10th">10th</option>
           <option value="12th">12th</option>
-          <option value="Graduation">Graduation(In relevant field)</option>
-          <option value="Graduation">Post Graduation(In relevant field)</option>
+          <option value="Graduation">Graduation (In relevant field)</option>
+          <option value="Post Graduation">Post Graduation (In relevant field)</option>
         </select>
       </div>
       <div class="">
         <input
           type="text"
+          id="Qualification_marks"
           name="Qualification_marks"
           class="form-control"
-          placeholder="Percentage or cgpa*"
+          placeholder="Percentage or CGPA*"
           required
         />
       </div>
@@ -60,12 +64,35 @@
     <div class="form-page">
       <input
         type="text"
+        id="location"
         name="location"
         class="form-control"
         placeholder="Current Location"
       />
     </div>
     <pre></pre>
-    <button class="btn btn-primary" type="submit" onclick="data1">Submit</button>
+    <button class="btn btn-primary" type="submit" onclick="data1(event)">Submit</button>
   </div>
+  <p id="output"></p>
+
+  <script>
+    function data1(event) {
+      event.preventDefault(); // Prevent the form from submitting and refreshing the page
+
+      var name = document.getElementById("name").value;
+      var phone = document.getElementById("phone").value;
+      var email = document.getElementById("email").value;
+      var qualification = document.getElementById("Qualification").value;
+      var qualificationMarks = document.getElementById("Qualification_marks").value;
+      var location = document.getElementById("location").value;
+
+      document.getElementById("output").innerHTML =
+        "Name: " + name + "<br>" +
+        "Phone: " + phone + "<br>" +
+        "Email: " + email + "<br>" +
+        "Qualification: " + qualification + "<br>" +
+        "Qualification Marks: " + qualificationMarks + "<br>" +
+        "Location: " + location;
+    }
+  </script>
 </form>
