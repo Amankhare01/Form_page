@@ -1,4 +1,11 @@
-<form class="border border-dark m-3 p-5 bg1" action="POST" netlify name="contact">
+<form class="border border-dark m-3 p-5 bg1" method="POST" data-netlify="true" name="contact">
+  <input type="hidden" name="form-name" value="contact" />
+  <div style="display: none;">
+    <label>
+      Don’t fill this out: <input name="bot-field" />
+    </label>
+  </div>
+  
   <div class="container">
     <h1 class="r1">Registration-Form</h1>
     <div class="form-page">
@@ -35,30 +42,29 @@
     </div>
     <pre></pre>
     <div class="form-page qual1">
-      <div class="">
-        <select
-          name="Qualification"
-          id="Qualification"
-          class="form-control"
-          required
-        >
-          <option value=""> - Select Qualification -</option>
-          <option value="10th">10th</option>
-          <option value="12th">12th</option>
-          <option value="Graduation">Graduation (In relevant field)</option>
-          <option value="Post Graduation">Post Graduation (In relevant field)</option>
-        </select>
-      </div>
-      <div class="">
-        <input
-          type="text"
-          id="Qualification_marks"
-          name="Qualification_marks"
-          class="form-control"
-          placeholder="Percentage or CGPA*"
-          required
-        />
-      </div>
+      <select
+        name="Qualification"
+        id="Qualification"
+        class="form-control"
+        required
+      >
+        <option value="">- Select Qualification -</option>
+        <option value="10th">10th</option>
+        <option value="12th">12th</option>
+        <option value="Graduation">Graduation (In relevant field)</option>
+        <option value="Post Graduation">Post Graduation (In relevant field)</option>
+      </select>
+    </div>
+    <pre></pre>
+    <div class="form-page">
+      <input
+        type="text"
+        id="Qualification_marks"
+        name="Qualification_marks"
+        class="form-control"
+        placeholder="Percentage or CGPA*"
+        required
+      />
     </div>
     <pre></pre>
     <div class="form-page">
@@ -71,28 +77,6 @@
       />
     </div>
     <pre></pre>
-    <button class="btn btn-primary" type="submit" onclick="data1(event)">Submit</button>
+    <button class="btn btn-primary" type="submit">Submit</button>
   </div>
-  <p id="output"></p>
-
-  <script>
-    function data1(event) {
-      event.preventDefault(); // Prevent the form from submitting and refreshing the page
-
-      var name = document.getElementById("name").value;
-      var phone = document.getElementById("phone").value;
-      var email = document.getElementById("email").value;
-      var qualification = document.getElementById("Qualification").value;
-      var qualificationMarks = document.getElementById("Qualification_marks").value;
-      var location = document.getElementById("location").value;
-
-      document.getElementById("output").innerHTML =
-        "Name: " + name + "<br>" +
-        "Phone: " + phone + "<br>" +
-        "Email: " + email + "<br>" +
-        "Qualification: " + qualification + "<br>" +
-        "Qualification Marks: " + qualificationMarks + "<br>" +
-        "Location: " + location;
-    }
-  </script>
 </form>
